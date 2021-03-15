@@ -42,19 +42,12 @@
                 </div>
 
             </div>
-            {{--<div class="flex justify-between items-center mt-4">
-                <div>
-                    <a href="#" class="flex items-center">
-                        <img src="{{$post->user->profile_photo_url}}" alt="avatar" class="mr-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-                        <h1 class="text-gray-700 font-bold hover:underline">{{$post->user->name}}</h1>
-                    </a>
-                </div>
-            </div>--}}
+
             <div class="flex w-full p-2 rounded-md bg-white items-center justify-start">
                 <div class="p-1 w-24 text-gray-500">{{$post->star_count}}人点赞</div>
                 <div class="w-auto max-w-full">
                     @foreach($post->star as $star)
-                        @if($loop->count < 10)
+                        @if($loop->iteration < 10)
                         <img class="inline-block object-cover w-8 h-8 text-white border-2 border-white rounded-full shadow-sm cursor-pointer" src="{{$star->user->profile_photo_url}}" alt="">
                         @endif
                     @endforeach
