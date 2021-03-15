@@ -1,7 +1,12 @@
 <x-app-layout>
-    <div class="mt-6 max-w-4xl mx-auto">
-        <!-- component -->
-        <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
+    <div class="mt-6 max-w-4xl mx-auto whitespace-pre h-screen">
+
+        酝酿了很久才给自己做了个小博客，主要是太懒了今天推明天，明天推后天，推到了现在，
+        livewire 写前后端不分离的项目是真的快，爽，就是 tailwindcss 组件库太少了，
+        很多样式需要自己写，就这一点不太好。后续将长期维护这个项目，将添加分类，使用es 来做搜索，
+        允许客户端添加文章，增加 markdown 编辑器。
+
+        {{--<div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
             <img class="w-full h-56 object-cover object-center" src="{{asset('storage/pan-zoe.jpg')}}" alt="avatar">
             <div class="flex items-center px-6 py-3 bg-gray-900">
                 <svg class="h-6 w-6 text-white fill-current" viewBox="0 0 512 512">
@@ -25,7 +30,7 @@
                     <h1 class="px-2 text-sm">373500914@qq.com</h1>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
 
 </x-app-layout>
