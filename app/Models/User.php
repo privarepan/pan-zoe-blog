@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -66,6 +69,17 @@ class User extends Authenticatable
     {
         if ($value) return $value;
         return 'hidden';
+    }
+
+    public function getProfilePhotoUrlAttribute()
+    {
+        if ($photo = $this->profile_photo_path) {
+            if (URL::isValidUrl($photo)) {
+                return $photo;
+            }
+            return Storage::disk($this->profilePhotoDisk())->url($this->profile_photo_path);
+        }
+        return $this->defaultProfilePhotoUrl();
     }
 
     public function messages()
