@@ -23,14 +23,6 @@ Route::view('about','about')->name('about');
 Route::get('message-board',\App\Http\Livewire\MessageBoard::class)->name('message.board');
 
 
-/*Route::get('test',function (){
-    broadcast(new \App\Events\NewUser(request()->id));
-});
-
-Route::get('testing', \App\Http\Livewire\Testing::class);*/
-
-
-
 Route::get('post-show/{post}', \App\Http\Livewire\PostShow::class)->name('post.show');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

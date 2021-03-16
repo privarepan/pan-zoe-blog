@@ -14,6 +14,7 @@
    
 > 1. laravel-echo-server.json 已经在项目的根目录，修改 authHost 
 > 2. cd 你的项目目录  laravel-echo-server start 
+> 3. 如需使用github 授权登录请填写 .env GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET
 
 
 ## 命令

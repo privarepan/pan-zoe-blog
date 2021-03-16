@@ -68,8 +68,6 @@ class PostShow extends Component
 
     public function comment()
     {
-//        $this->emitTo('post-comment','$refresh');
-//        return ;
         if (!auth()->check()) {
             return  redirect()->guest(route('login'));
         }
@@ -82,7 +80,6 @@ class PostShow extends Component
         ]);
         $this->reset('content');
         $this->emitTo('post-comment','$refresh');
-//        $this->emitSelf('$refresh');
     }
 
 
@@ -100,8 +97,4 @@ class PostShow extends Component
         $this->modal['component'] = $component;
     }
 
-    public function test($name)
-    {
-//        dd($name);
-    }
 }
